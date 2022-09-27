@@ -12,7 +12,7 @@ const [advice, setAdvice ]= useState([])
 axios.get(url)
 .then(Response => Response.data)
 .then((data)=>{
-setAdvice(data).catch((error) => console.log("An error occured"));})
+setAdvice(data).catch((error) => console.log("An error occured",data));})
 }
 
 
