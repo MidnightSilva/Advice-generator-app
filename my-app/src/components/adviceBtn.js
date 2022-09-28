@@ -1,21 +1,21 @@
 import Dice from '../Assets/icon-dice.svg'
-
-// import { AppContext } from "../context/AppContext";
-
-
+import { AppContext  } from "../context/AppContext";
+import { useContext } from "react";
 
 
-const adviceBtn = () => {
 
-  // const AdviceGenerator = useContext(AppContext)
+
+const AdviceBtn = () => {
+
+const GetAdvice = useContext(AppContext);
+
   return (
     <div
-      // onClick={() => AdviceGenerator(!AdviceGenerator)}
+      onClick={() => GetAdvice.GetAdvice(!GetAdvice.GetAdvice)}
       className="adviceBtn"
     >
       <img src={Dice} alt="dice" />
     </div>
   );
-}
-
-export default adviceBtn
+  }
+export default AdviceBtn

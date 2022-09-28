@@ -1,11 +1,14 @@
-import React from 'react'
+import { AppContext } from "../context/AppContext";
+import { useContext } from "react";
 
-const advice = () => {
+const Advice = () => {
+  const advice = useContext(AppContext);
+  console.log(advice)
   return (
-    <div className="advice">“It is easy to sit up and take notice, what’s diffcult is
-      getting up and taking action
-    </div>
-  );
-}
 
-export default advice
+
+    <div className="advice">{advice.advice}</div>
+  );
+};
+
+export default Advice;

@@ -1,25 +1,23 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import axios from 'axios'
 
 export const AppContext = createContext();
 
-const AppContextProvider = (props) => {
-const url = "https://api.adviceslip.com/advice";
+export const AppContextProvider = (props) => {
+const [advice , setAdvice] = useState ("Want some Advice?")
+const [adviceNumber, setAdviceNumber] = useState("000");
 
 
-const AdviceGenerator =()=>{
-const [advice, setAdvice ]= useState([])
-axios.get(url)
-.then(Response => Response.data)
-.then((data)=>{
-setAdvice(data).catch((error) => console.log("An error occured"));})
-}
+const GetAdvice = () => {
+  const url = "https://api.adviceslip.com/advice";
+  axios
+    .get( url )
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err));
+};
 
 
-
-    const value = {
-      AdviceGenerator,
-    };
+    const value = { advice, GetAdvice, adviceNumber };
 
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
