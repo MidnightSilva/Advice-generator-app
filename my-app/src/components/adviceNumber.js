@@ -1,7 +1,10 @@
-import React from 'react'
+import { AppContext } from "../context/AppContext";
+import { useContext } from "react";
 
-const adviceNumber = () => {
-  return <div className="adviceNumber"> ADVICE #117</div>;
-}
+const AdviceNumber = () => {
+  const advice = useContext(AppContext);
+  console.log(advice);
+  return <div className="adviceNumber">{advice.adviceNumber}</div>;
+};
 
-export default adviceNumber
+export default AdviceNumber;
