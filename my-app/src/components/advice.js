@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 const Advice = () => {
   const advice = useContext(AppContext);
-  console.log(advice)
   return (
 
 

@@ -3,8 +3,8 @@ import { useContext } from "react";
 
 const AdviceNumber = () => {
   const advice = useContext(AppContext);
-  console.log(advice);
-  return <div className="adviceNumber">{advice.adviceNumber}</div>;
+ 
+  return <div className="adviceNumber">{advice.setAdviceNumber}</div>;
 };
 
 export default AdviceNumber;
